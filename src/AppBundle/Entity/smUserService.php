@@ -34,7 +34,7 @@ class smUserService
      *   @ORM\JoinColumn(name="serviceid", referencedColumnName="id", unique=true)
      * })
      */
-    private $serviceid;
+    private $service;
 
     /**
      * @var \AppBundle\Entity\smType
@@ -44,7 +44,7 @@ class smUserService
      *   @ORM\JoinColumn(name="typeid", referencedColumnName="id", unique=true)
      * })
      */
-    private $typeid;
+    private $type;
 
     /**
      * @var \AppBundle\Entity\smUser
@@ -54,7 +54,7 @@ class smUserService
      *   @ORM\JoinColumn(name="userid", referencedColumnName="id", unique=true)
      * })
      */
-    private $userid;
+    private $user;
 
 
 
@@ -107,74 +107,74 @@ class smUserService
     }
 
     /**
-     * Set serviceid
+     * Set service
      *
-     * @param \AppBundle\Entity\smService $serviceid
+     * @param \AppBundle\Entity\smService $service
      *
      * @return smUserService
      */
-    public function setServiceid(\AppBundle\Entity\smService $serviceid = null)
+    public function setService(\AppBundle\Entity\smService $service = null)
     {
-        $this->serviceid = $serviceid;
+        $this->service = $service;
 
         return $this;
     }
 
     /**
-     * Get serviceid
+     * Get service
      *
      * @return \AppBundle\Entity\smService
      */
-    public function getServiceid()
+    public function getService()
     {
-        return $this->serviceid;
+        return $this->service;
     }
 
     /**
-     * Set typeid
+     * Set type
      *
-     * @param \AppBundle\Entity\smType $typeid
+     * @param \AppBundle\Entity\smType $type
      *
      * @return smUserService
      */
-    public function setTypeid(\AppBundle\Entity\smType $typeid = null)
+    public function setType(\AppBundle\Entity\smType $type = null)
     {
-        $this->typeid = $typeid;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get typeid
+     * Get type
      *
      * @return \AppBundle\Entity\smType
      */
-    public function getTypeid()
+    public function getType()
     {
-        return $this->typeid;
+        return $this->type;
     }
 
     /**
-     * Set userid
+     * Set user
      *
-     * @param \AppBundle\Entity\smUser $userid
+     * @param \AppBundle\Entity\smUser $user
      *
      * @return smUserService
      */
-    public function setUserid(\AppBundle\Entity\smUser $userid = null)
+    public function setUser(\AppBundle\Entity\smUser $user = null)
     {
-        $this->userid = $userid;
+        $this->user = $user;
 
         return $this;
     }
 
     /**
-     * Get userid
+     * Get user
      *
      * @return \AppBundle\Entity\smUser
      */
-    public function getUserid()
+    public function getUser()
     {
-        return $this->userid;
+        return $this->user;
     }
 }

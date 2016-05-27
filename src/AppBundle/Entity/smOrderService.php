@@ -22,25 +22,34 @@ class smOrderService
     private $id;
 
     /**
-     * @var integer
+     * @var \AppBundle\Entity\smOrder
      *
-     * @ORM\Column(name="orderid", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\smOrder")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="orderid", referencedColumnName="id", unique=true)
+     * })
      */
-    private $orderid;
+    private $order;
 
     /**
-     * @var integer
+     * @var \AppBundle\Entity\smService
      *
-     * @ORM\Column(name="serviceid", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\smService")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="serviceid", referencedColumnName="id", unique=true)
+     * })
      */
-    private $serviceid;
+    private $service;
 
     /**
-     * @var integer
+     * @var \AppBundle\Entity\smType
      *
-     * @ORM\Column(name="typeid", type="integer", nullable=true)
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\smType")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="typeid", referencedColumnName="id", unique=true)
+     * })
      */
-    private $typeid;
+    private $type;
 
 
 
@@ -55,74 +64,74 @@ class smOrderService
     }
 
     /**
-     * Set orderid
+     * Set order
      *
-     * @param integer $orderid
+     * @param \AppBundle\Entity\smOrder $order
      *
      * @return smOrderService
      */
-    public function setOrderid($orderid)
+    public function setOrder(\AppBundle\Entity\smOrder $order = null)
     {
-        $this->orderid = $orderid;
+        $this->order = $order;
 
         return $this;
     }
 
     /**
-     * Get orderid
+     * Get order
      *
-     * @return integer
+     * @return \AppBundle\Entity\smOrder
      */
-    public function getOrderid()
+    public function getOrder()
     {
-        return $this->orderid;
+        return $this->order;
     }
 
     /**
-     * Set serviceid
+     * Set service
      *
-     * @param integer $serviceid
+     * @param \AppBundle\Entity\smService $service
      *
      * @return smOrderService
      */
-    public function setServiceid($serviceid)
+    public function setService(\AppBundle\Entity\smService $service = null)
     {
-        $this->serviceid = $serviceid;
+        $this->service = $service;
 
         return $this;
     }
 
     /**
-     * Get serviceid
+     * Get service
      *
-     * @return integer
+     * @return \AppBundle\Entity\smService
      */
-    public function getServiceid()
+    public function getService()
     {
-        return $this->serviceid;
+        return $this->service;
     }
 
     /**
-     * Set typeid
+     * Set type
      *
-     * @param integer $typeid
+     * @param \AppBundle\Entity\smType $type
      *
      * @return smOrderService
      */
-    public function setTypeid($typeid)
+    public function setType(\AppBundle\Entity\smType $type = null)
     {
-        $this->typeid = $typeid;
+        $this->type = $type;
 
         return $this;
     }
 
     /**
-     * Get typeid
+     * Get type
      *
-     * @return integer
+     * @return \AppBundle\Entity\smType
      */
-    public function getTypeid()
+    public function getType()
     {
-        return $this->typeid;
+        return $this->type;
     }
 }

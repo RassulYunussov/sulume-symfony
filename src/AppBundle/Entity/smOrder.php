@@ -71,7 +71,7 @@ class smOrder
      *   @ORM\JoinColumn(name="cityid", referencedColumnName="id")
      * })
      */
-    private $cityid;
+    private $city;
 
 
 
@@ -230,26 +230,26 @@ class smOrder
     }
 
     /**
-     * Set cityid
+     * Set city
      *
-     * @param \AppBundle\Entity\smCity $cityid
+     * @param \AppBundle\Entity\smCity $city
      *
      * @return smOrder
      */
-    public function setCityid(\AppBundle\Entity\smCity $cityid = null)
+    public function setCity(\AppBundle\Entity\smCity $city = null)
     {
-        $this->cityid = $cityid;
+        $this->city = $city;
 
         return $this;
     }
 
     /**
-     * Get cityid
+     * Get city
      *
      * @return \AppBundle\Entity\smCity
      */
-    public function getCityid()
+    public function getCity()
     {
-        return $this->cityid;
+        return $this->city;
     }
 }

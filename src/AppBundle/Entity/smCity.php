@@ -7,8 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * smCity
  *
- * @ORM\Table(name="smcity", 
- * indexes={@ORM\Index(name="fk_country_city_idx", columns={"countryid"})})
+ * @ORM\Table(name="smcity", indexes={@ORM\Index(name="fk_country_city_idx", columns={"countryid"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\smCityRepository")
  */
 class smCity
@@ -37,7 +36,7 @@ class smCity
      *   @ORM\JoinColumn(name="countryid", referencedColumnName="id")
      * })
      */
-    private $countryid;
+    private $country;
 
 
 
@@ -76,26 +75,26 @@ class smCity
     }
 
     /**
-     * Set countryid
+     * Set country
      *
-     * @param \AppBundle\Entity\smCountry $countryid
+     * @param \AppBundle\Entity\smCountry $country
      *
      * @return smCity
      */
-    public function setCountryid(\AppBundle\Entity\smCountry $countryid = null)
+    public function setCountry(\AppBundle\Entity\smCountry $country = null)
     {
-        $this->countryid = $countryid;
+        $this->country = $country;
 
         return $this;
     }
 
     /**
-     * Get countryid
+     * Get country
      *
      * @return \AppBundle\Entity\smCountry
      */
-    public function getCountryid()
+    public function getCountry()
     {
-        return $this->countryid;
+        return $this->country;
     }
 }
